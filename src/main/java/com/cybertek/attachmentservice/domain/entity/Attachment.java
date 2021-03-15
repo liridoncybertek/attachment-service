@@ -21,6 +21,7 @@ public class Attachment {
     private Long id;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private AttachmentType type;
 
     @Column(nullable = false, unique = true)
@@ -39,5 +40,5 @@ public class Attachment {
     private String url;
 
     @Column(name = "created_date_time", nullable = false)
-    private LocalDateTime createdDateTime;
+    private LocalDateTime createdDateTime = LocalDateTime.now();
 }
